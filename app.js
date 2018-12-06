@@ -14,9 +14,13 @@ var passportLocalMongoose = require("passport-local-mongoose");
 var expressSanitizer      = require('express-sanitizer');
 
 
+
+
 mongoose.set("useFindAndModify", false);
-// mongoose.connect('mongodb://localhost/yelp_campv12Deployed', { useNewUrlParser: true });
-mongoose.connect("mongodb://Alex:password123@ds223063.mlab.com:23063/yelpcampv12deployed", { useNewUrlParser: true })
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+// mongoose.connect("mongodb://Alex:password123@ds223063.mlab.com:23063/yelpcampv12deployed", { useNewUrlParser: true })
+
+
 mongoose.set('useCreateIndex', true);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
