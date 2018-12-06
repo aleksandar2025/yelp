@@ -15,7 +15,7 @@ var expressSanitizer      = require('express-sanitizer');
 
 
 mongoose.set("useFindAndModify", false);
-mongoose.connect('mongodb://localhost/yelp_campv12', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/yelp_campv12Deployed', { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
