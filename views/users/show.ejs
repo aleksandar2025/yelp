@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= user.firstName + " " + user.lastName %></h1>
+        <img src="<%= user.avatar %>" alt="user profile image">
+        <div><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+    </div>
+    <div class="col-md-8">
+        <h3><%= user.firstName %>'s campgrounds:</h3>
+        <ul>
+            <% campgrounds.forEach(function(campground){ %>
+                <li><a href="/campgrounds/<%= campground.id %>"><%= campground.name %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
+    <p>Doggo ipsum heckin good boys and girls aqua doggo adorable doggo shoober, very taste wow fluffer. 
+        very taste wow blep. Fluffer doggorino doge shoob shoober, you are doing me a frighten ur givin me a spook.
+        Big ol pupper heck blop yapper doggorino many pats, boofers porgo doggorino big ol pupper. Shoob fluffer I am bekom fat, fat boi.
+        Snoot shoober yapper boof blop, many pats heck I am bekom fat. Fat boi wow very biscit wrinkler fat boi heckin angery woofer aqua doggo very jealous pupper wow such tempt,
+        fluffer shoob extremely cuuuuuute very good spot heckin good boys ruff. Fat boi porgo long water shoob heckin good boys and girls maximum borkdrive, boof long woofer waggy wags.
+        </p>
+    
+
+<% include ../partials/footer %>
