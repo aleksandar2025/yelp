@@ -134,7 +134,7 @@ router.post("/forgot", function(req, res, next){
              }
              smtpTransport.sendMail(mailOptions, function(err){
                  if(err){
-                     req.flas("error", "Couldn't send email")
+                     req.flash("error", "Couldn't send email")
                      return res.redirect("back")
                  }
                  console.log("mail sent")

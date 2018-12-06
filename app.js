@@ -12,12 +12,10 @@ var seedDB                = require("./seeds");
 var Comment               = require("./models/comment");
 var passportLocalMongoose = require("passport-local-mongoose");
 var expressSanitizer      = require('express-sanitizer');
-
-
-
+var url                   = process.env.DATABASEURL || "mongodb://localhost/yelp_campv12Deployed";
 
 mongoose.set("useFindAndModify", false);
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+mongoose.connect(url, { useNewUrlParser: true });
 
 
 
