@@ -19,7 +19,7 @@
                 </li>
             <% } else { %>
                 <li class="nav-item">
-                  <a href="/users/<%= currentUser.id %>" class="nav-link">Signed In As <%= currentUser.username %></a>
+                  <a href="#" class="nav-link">Signed In As <%= currentUser.username %></a>
                 </li>
                 <li class="nav-item">
                   <a href="/logout" class="nav-link">Logout</a>
@@ -28,17 +28,14 @@
         </ul>
       </div>
     </nav>
-<div class="container">
-  <% if(error && error.length > 0){ %>
-      <div class="alert alert-danger" role="alert">
-      <%= error %>
+    
+    <div class="container">
+       <% if(error && error.length > 0) { %>
+         <div class="alert alert-danger" role="alert"><%=error %></div>
+       <% } %>
+       
+       <% if(success && success.length > 0) { %>
+         <div class="alert alert-success" role="alert"><%= success %></div>
+       <% } %>
     </div>
-  <% } %>
-  <% if(success && success.length > 0){ %>
-<div class="alert alert-success" role="alert">
-  <%= success %>
-</div>
-<% } %>
-</div>
-
-<div class="container-fluid">
+    <div class="container">
